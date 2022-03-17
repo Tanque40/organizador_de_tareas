@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'hamlit'
 gem 'simple_form'
+gem 'annotate'
+gem 'rails-i18n'
 
 #################
 
