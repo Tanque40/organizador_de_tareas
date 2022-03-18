@@ -17,7 +17,7 @@ es:
       Name: Nombre
     new_category: Nueva Categoría
     show:
-      Name: Nombre
+      Name: 'Nombre:'
   common:
     Destroy: Eliminar
     New_Category: Nueva Categoría
@@ -34,5 +34,7 @@ es:
   tasks:
     edit:
       Editing_task: Editando tarea
+    errors:
+      invalid_due_date: La fecha no puede estar en el pasado
     index:
       Listing_tasks: Mostrando tareas

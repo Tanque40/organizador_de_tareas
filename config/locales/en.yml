@@ -17,7 +17,7 @@ en:
       Name: Name
     new_category: New Category
     show:
-      Name: Name
+      Name: 'Name:'
   common:
     Destroy: Destroy
     New_Category: New category
@@ -34,5 +34,7 @@ en:
   tasks:
     edit:
       Editing_task: Editing task
+    errors:
+      invalid_due_date: Invalid due date
     index:
       Listing_tasks: Listing tasks
