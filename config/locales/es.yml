@@ -1,15 +1,38 @@
 ---
 es:
-  categories:
-    form:
-      description: Descripción
-      name: Nombre
-    new_category: Nueva Categoría
   activerecord:
     models:
       category:
         one: Categoría
         others: Categorías
+  categories:
+    edit:
+      editing_category: Editando categoría
+    form:
+      description: Descripción
+      name: Nombre
+    index:
+      Description: Descripción
+      Listing_categories: Mostrando categorías
+      Name: Nombre
+    new_category: Nueva Categoría
+    show:
+      Name: Nombre
   common:
-    back: 'Atrás'
+    Destroy: Eliminar
+    New_Category: Nueva Categoría
+    New_Task: Nueva Tarea
+    back: Atrás
+    category: Categoría
+    description: Descripción
+    destroy: Eliminar
+    due_date: Fecha de vencimiento
+    edit: Editar
+    name: Nombre
+    show: Mostrar
   hello: Hello world
+  tasks:
+    edit:
+      Editing_task: Editando tarea
+    index:
+      Listing_tasks: Mostrando tareas

@@ -1,8 +1,38 @@
 ---
 en:
+  activerecord:
+    models:
+      category:
+        one: Category
+        others: Categories
   categories:
+    edit:
+      editing_category: Editing category
     form:
       description: Description
       name: Name
+    index:
+      Description: Description
+      Listing_categories: Listing categories
+      Name: Name
     new_category: New Category
+    show:
+      Name: Name
+  common:
+    Destroy: Destroy
+    New_Category: New category
+    New_Task: New task
+    back: Back
+    category: Category
+    description: Description
+    destroy: Destroy
+    due_date: Due date
+    edit: Edit
+    name: Name
+    show: Show
   hello: Hello world
+  tasks:
+    edit:
+      Editing_task: Editing task
+    index:
+      Listing_tasks: Listing tasks

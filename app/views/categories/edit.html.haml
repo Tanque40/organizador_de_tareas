@@ -1,7 +1,7 @@
-%h1 Editing category
+%h1= t('.editing_category')
 
 = render 'form'
 
-= link_to 'Show', @category
+= link_to t('common.show'), @category
 \|
-= link_to 'Back', categories_path
+= link_to t('common.back'), categories_path
