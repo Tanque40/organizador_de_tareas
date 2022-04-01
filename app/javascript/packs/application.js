@@ -9,10 +9,14 @@ require("@rails/activestorage").start()
 require("channels")
 
 /**
- * ? Persoal libraries
+ *  Persoal libraries
  */
 
+import 'bootstrap'
+import 'roboto-fontface'
 import 'cocoon'
+
+import '../src/stylesheets/application'
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

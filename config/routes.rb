@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :tasks
+  resources :tasks do
+    resources :notes, only: [:create], controller: 'tasks/notes'
+  end
+  
   resources :categories
 
   # Para dejar Tasks#index como la página principal
