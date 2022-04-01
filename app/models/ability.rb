@@ -9,5 +9,8 @@ class Ability
 
     # le digo que el usuario puede manejar la tarea que uno mismo haya creado
     can :manage, Task, owner_id: user.id
+    
+    # le digo que un participante puede leer
+    can :read, Task, participating_users: { user_id: user.id }
   end
 end

@@ -6,7 +6,13 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    # Filtro para que solo me muestren las tareas
+    # a las que estoy asignado y las tareas que yo cree
+    @tasks = Task.joins(:participants).where(
+      'owner_id = ? OR participants.user_id = ?',
+      current_user.id,
+      current_user.id,
+    ).group(:id)
   end
 
   # GET /tasks/1 or /tasks/1.json

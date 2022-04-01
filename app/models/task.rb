@@ -21,7 +21,10 @@ class Task < ApplicationRecord
   validates :name, :description, presence: true
   validates :name, uniqueness: { case_insensitive: false }
   validate :due_date_validity
-
+  
+  # Un callback que me ayuda a ejecutar codigo antes de que se guarde un archivo
+  before_create :create_code
+  
   accepts_nested_attributes_for :participating_users, allow_destroy: true
   
   def due_date_validity
@@ -32,4 +35,14 @@ class Task < ApplicationRecord
     errors.add :due_date, I18n.t('tasks.errors.invalid_due_date')
 
   end
+
+  def create_code
+    
+    # Podemos verlo como un código de unicidad de la tarea
+    # SecureRandom es una clase que nos da Rails para poder generar buenos aleatorios
+    # Y con el .to_s(36) Lo convertimos en un string de base 36 para asegurarnos que no sea un numero muy grande
+    self.code = "#{owner_id}#{Time.now.to_i.to_s(36)}#{SecureRandom.hex(8)}"
+
+  end
+
 end
