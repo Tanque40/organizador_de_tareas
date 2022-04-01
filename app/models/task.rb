@@ -24,6 +24,9 @@ class Task < ApplicationRecord
   
   # Un callback que me ayuda a ejecutar codigo antes de que se guarde un archivo
   before_create :create_code
+
+  # Para mandar el mail
+  after_create :send_email
   
   accepts_nested_attributes_for :participating_users, allow_destroy: true
   
@@ -42,6 +45,16 @@ class Task < ApplicationRecord
     # SecureRandom es una clase que nos da Rails para poder generar buenos aleatorios
     # Y con el .to_s(36) Lo convertimos en un string de base 36 para asegurarnos que no sea un numero muy grande
     self.code = "#{owner_id}#{Time.now.to_i.to_s(36)}#{SecureRandom.hex(8)}"
+
+  end
+
+  def send_email
+    
+    (participants + [owner]).each do |user|
+
+      ParticipantMailer.with(user: user, task: self).new_task_email.deliver!
+    
+    end
 
   end
 

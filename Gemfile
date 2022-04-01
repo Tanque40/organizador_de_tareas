@@ -71,6 +71,7 @@ group :development do
  #################
 
  gem 'hamlit-rails'
+ gem 'letter_opener'
 
  #################
 
